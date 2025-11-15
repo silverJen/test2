@@ -39,43 +39,31 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/30 to-transparent"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="features" className="section-padding bg-white">
+      <div className="container mx-auto container-padding">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold text-indigo-600 bg-indigo-50 rounded-full">
-              기능
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
               주요 기능
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
               바이브라이팅이 제공하는 핵심 기능들
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="bg-white rounded-xl p-8 md:p-10 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-200"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity`}></div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  {feature.title}
+                </h3>
                 
-                <div className="relative z-10">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 mb-5 rounded-xl bg-gradient-to-br ${feature.gradient} text-white text-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                    {feature.icon}
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
