@@ -27,60 +27,45 @@ export default function UseCases() {
   ];
 
   return (
-    <section id="use-cases" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="use-cases" className="section-padding bg-gray-50">
+      <div className="container mx-auto container-padding">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold text-purple-600 bg-purple-50 rounded-full">
-              사용 사례
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
               실제 사용 사례
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
               실제 사용자들이 바이브라이팅을 어떻게 활용하는지
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-8">
             {useCases.map((useCase, index) => (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br ${useCase.bgGradient} rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-white/50 overflow-hidden`}
+                className="bg-white rounded-xl p-8 md:p-10 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-200"
               >
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${useCase.gradient} opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity`}></div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                  {useCase.persona}
+                </h3>
                 
-                <div className="relative z-10">
-                  <div className="flex flex-col md:flex-row items-start gap-6">
-                    <div className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br ${useCase.gradient} flex items-center justify-center text-4xl shadow-xl transform group-hover:scale-110 transition-transform duration-300`}>
-                      {useCase.icon}
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                        {useCase.persona}
-                      </h3>
-                      
-                      <div className="space-y-5">
-                        <div className="bg-white/60 backdrop-blur-sm rounded-xl p-5 border border-white/80">
-                          <p className="text-xs font-bold text-gray-500 uppercase mb-2 tracking-wider">
-                            상황
-                          </p>
-                          <p className="text-gray-800 leading-relaxed">
-                            {useCase.scenario}
-                          </p>
-                        </div>
-                        
-                        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-white/80">
-                          <p className="text-xs font-bold text-gray-500 uppercase mb-2 tracking-wider">
-                            결과
-                          </p>
-                          <p className="text-gray-800 leading-relaxed">
-                            {useCase.result}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500 uppercase mb-3 tracking-wider">
+                      상황
+                    </p>
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {useCase.scenario}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500 uppercase mb-3 tracking-wider">
+                      결과
+                    </p>
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {useCase.result}
+                    </p>
                   </div>
                 </div>
               </div>
